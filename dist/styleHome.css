@@ -1,0 +1,102 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Varela Round', sans-serif;
+    /* font-family: 'Noto Sans Thai', sans-serif; */
+  }
+  
+  html,
+  body {
+    min-height: 100vh;
+    place-items: center;
+    background-color: #121519;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 20px;
+  }
+  
+  
+  /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+  .row.content {
+    height: 550px;
+  }
+  
+  /* Set gray background color and 100% height */
+  .sidenav {
+    background-color: #f1f1f1;
+    height: 100%;
+  }
+  
+  /* On small screens, set height to 'auto' for the grid */
+  @media screen and (max-width: 767px) {
+    .row.content {
+      height: auto;
+    }
+  }
+  
+  .content {
+    font-size: 25px;
+  }
+  
+  .navbar-brand {
+    color: #fff;
+    font-size: 30px;
+  }
+  
+  #navbarBlur {
+    color: gray;
+    padding: 10;
+  }
+  
+  table {
+    background-color: yellow;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th,
+  td {
+    color: black;
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ffffff;
+  }
+  
+  tr:hover {
+    color: #1e0303;
+    background-color: gray;
+  }
+  
+  
+  
+  /* form css */
+  form {
+    background-color: #fff;
+  }
+  
+  
+  .form-control input[type=text],
+  .form-control input[type=password],
+  .form-control input[type=date],
+  .form-control input[type="number"],
+  .form-control select {
+    height: 50px;
+    width: 100%;
+    padding: 9px 20px;
+    text-align: left;
+    border: 0;
+    outline: 0;
+    border-radius: 6px;
+    background-color: #1e0303;
+    font-size: 18px;
+    font-weight: 300;
+    color: #1e0303;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    margin-top: 16px;
+  }
+  

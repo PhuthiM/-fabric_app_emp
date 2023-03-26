@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Menu EmpAll</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styleMenu_Empall.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a2ba1cba02.js" crossorigin="anonymous"></script>
+    <script src="2getAllAssets.js"></script>
+    <script src="table.js"></script>
+    <!-- <script type="text/javascript" src="example.js"></script> -->
+</head>
+
+<body>
+
+    <nav class="navbar  bg-dark">
+        <div class="container-fluid">
+            <div class="navbar-brand">ATTENDACE BY BL<i class="fa-regular fa-clock"
+                    style="font-size:28px;color: rgb(228, 213, 97);"></i>CKCHAIN</div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row content p-3">
+            <div class="col-sm-2 p-3 bg-white" style="border-radius: 10px;">
+                <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                    <span class="fs-6 fw-semibold px-5">Menu<i class="fa-solid fa-arrow-pointer px-1 "></i></span>
+                </a>
+                <ul class="list-unstyled ps-0" id="navbarToggleExternalContent">
+
+                    <li class="mb-1 ">
+                        <a href="/" class="btn align-items-center rounded fs-6 " aria-current="page">
+                            <i class="fa-solid fa-house-flood-water px-2"></i>Home</a>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded fs-6 " data-bs-toggle="collapse"
+                            data-bs-target="#home-collapse" aria-expanded="true">
+                            <i class="fa-solid fa-user-clock px-2 "></i>Employee
+                            <i class="fa-solid fa-angle-down p-2"></i>
+                        </button>
+                        <div class="collapse " id="home-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small px-4">
+                                <li>
+                                    <a href="/menu_EmpAll" class="btn align-items-center rounded fs-6  aria-current="
+                                        page">
+                                        <i class="fa-solid fa-caret-right px-2"></i>All Emp </a>
+
+                                    <a href="/menu_EmpAdd" class="btn align-items-center rounded fs-6"
+                                        aria-current="page">
+                                        <i class="fa-solid fa-caret-right px-2"></i>Add Emp </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mb-1 ">
+                        <a href="/menu_Report" class="btn align-items-center rounded fs-6 " aria-current="page">
+                            <i class="fa-solid fa-file px-2"></i>Report</a>
+                    </li>
+
+                    <li class="border-top my-3"></li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                            data-bs-target="#account-collapse" aria-expanded="false">
+                            Account
+                        </button>
+                        <div class="collapse" id="account-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="#" class="link-dark rounded">New...</a></li>
+                                <li><a href="#" class="link-dark rounded">Profile</a></li>
+                                <li><a href="#" class="link-dark rounded">Settings</a></li>
+                                <li><a href="#" class="link-dark rounded">Sign out</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-10">
+                <nav class="navbar navbar-main navbar-expand-lg py-3 px-0 mx-0 shadow-none bg-light" id="navbarBlur"
+                    data-scroll="true">
+                    <nav aria-label="breadcrumb">
+                        <ol class=" breadcrumb bg-transparent mb-0 pb-0 pt-0 px-3 me-sm-6 me-5">
+                            <li class="breadcrumb-item text-sm "> Menu </li>
+                            <li class="breadcrumb-item text-sm "> Employee </li>
+                            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">All Emp</li>
+                        </ol>
+                    </nav>
+                </nav>
+                <table class="table table-hover bg-light" id="myTable">
+                    <thead>
+                        <tr>
+                            <th>Employee</th>
+                            <th>Name</th>
+                            <th>Time In</th>
+                            <th>Time Out</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% users.forEach(function(user) { %>
+                            <tr>
+                                <td>
+                                    <%= user.EmployeeId %>
+                                </td>
+                                <td>
+                                    <%= user.Name %>
+                                </td>
+                                <td>
+                                    <%= user.Time_in %>
+                                </td>
+                                <td>
+                                    <%= user.Time_out %>
+                                </td>
+                            </tr>
+                            <% }); %>
+                    </tbody>
+                </table>
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

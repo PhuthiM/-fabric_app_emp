@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Menu Report</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styleHome.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a2ba1cba02.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <nav class="navbar  bg-dark">
+        <div class="container-fluid">
+            <div class="navbar-brand">ATTENDACE BY BL<i class="fa-regular fa-clock" style="font-size:28px;color: rgb(228, 213, 97);"></i>CKCHAIN</div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row content p-3">
+            <div class="col-sm-2 p-3 bg-white" style="border-radius: 10px;">
+                <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                    <span class="fs-5 fw-semibold px-5">Menu<i class="fa-solid fa-arrow-pointer px-2 "></i></span>
+                </a>
+                <ul class="list-unstyled ps-0">
+
+                    <li class="mb-1 ">
+                        <a href="/" class="btn align-items-center rounded fs-6 " aria-current="page">
+                            <i class="fa-solid fa-house-flood-water px-2"></i>Home</a>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded fs-6 " data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                            <i class="fa-solid fa-user-clock px-2 "></i>Employee
+                            <i class="fa-solid fa-angle-down p-2"></i>
+                        </button>
+                        <div class="collapse " id="home-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small px-4">
+                                <li>
+                                    <a href="/menu_EmpAll" class="btn align-items-center rounded fs-6  aria-current=" page">
+                                        <i class="fa-solid fa-caret-right px-2"></i>All Emp </a>
+
+                                    <a href="/menu_EmpAdd" class="btn align-items-center rounded fs-6" aria-current="page">
+                                        <i class="fa-solid fa-caret-right px-2"></i>Add Emp </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mb-1 ">
+                        <a href="/menu_Report" class="btn align-items-center rounded fs-6 " aria-current="page">
+                            <i class="fa-solid fa-file px-2"></i>Report</a>
+                    </li>
+
+                    <li class="border-top my-3"></li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                            Account
+                        </button>
+                        <div class="collapse" id="account-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="#" class="link-dark rounded">New...</a></li>
+                                <li><a href="#" class="link-dark rounded">Profile</a></li>
+                                <li><a href="#" class="link-dark rounded">Settings</a></li>
+                                <li><a href="#" class="link-dark rounded">Sign out</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <br>
+        
+            <div class="col-10">
+                <nav class="navbar navbar-main navbar-expand-lg py-3 px-0 mx-0 shadow-none bg-light" id="navbarBlur" data-scroll="true">
+                    <nav aria-label="breadcrumb">
+                        <ol class=" breadcrumb bg-transparent mb-0 pb-0 pt-0 px-3 me-sm-6 me-5">
+                            <li class="breadcrumb-item text-sm "> Menu </li>
+                            <li class="breadcrumb-item text-sm "> Employee </li>
+                            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Report</li>
+
+                        </ol>
+                    </nav>
+                </nav>
+
+                <table class="table table-hover bg-light text-black " style="color: black;">
+                    <thead>
+                        <tr>
+                            <th width="10">
+                                <div align="center">No</div>
+                            </th>
+                            <th width="100">
+                                <div align="center">EmployeeID</div>
+                            </th>
+                            <th width="100">
+                                <div align="center">Name</div>
+                            </th>
+                            <th width="100">
+                                <div align="center">Time IN</div>
+                            </th>
+                            <th width="100">
+                                <div align="center">Time Out</div>
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody style="text-align: center;">
+                        <tr>
+                            <td width="10">
+                                <div align="center">1</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">405096</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">สมเกียรติ</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 07:34:46</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 17:35:10</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="10">
+                                <div align="center">2</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">405021</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">มีนา</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 08:03:34</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 17:04:01</div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td width="10">
+                                <div align="center">3</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">405039</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">ถิรวัฒน์</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 07:33:28</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 17:26:09</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="10">
+                                <div align="center">4</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">405026</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">กุสุมา</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 07:48:35</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 17:53:28</div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td width="10">
+                                <div align="center">5</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">405112</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">ชณายุทธ</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 08:01:15</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 17:19:29</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="10">
+                                <div align="center">6</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">405088</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">ทศพล</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 07:31:15</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 17:15:43</div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td width="10">
+                                <div align="center">7</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">405070</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">ธิภาพร</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 07:45:22</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 18:00:15</div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td width="10">
+                                <div align="center">8</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">405253</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">กมลชนก</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 08:02:29</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 17:24:04</div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td width="10">
+                                <div align="center">9</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">405260</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">อรชา</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 07:31:18</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 17:14:53</div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td width="10">
+                                <div align="center">10</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">405204</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">ปรัชญา</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 07:48:59</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 17:32:44</div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td width="10">
+                                <div align="center">11</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">405138</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">สุทธิพงษ์</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 07:34:27</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 17:34:15</div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td width="10">
+                                <div align="center">12</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">405245</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">อภิศักดิ์</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 07:59:28</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 17:20:45</div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td width="10">
+                                <div align="center">13</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">405211</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">รณภพ</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 08:10:36</div>
+                            </td>
+                            <td width="100">
+                                <div align="center">08/03/2023 - 17:41:32</div>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

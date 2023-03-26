@@ -1,0 +1,369 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Varela Round', sans-serif;
+}
+
+html,
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  /* background: url(https://png.pngtree.com/background/20210711/original/pngtree-real-estate-commercial-real-estate-background-banner-picture-image_1131973.jpg)
+    no-repeat center center fixed; */
+  background-color: #121519;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  font-family: 'Varela Round', sans-serif;
+  /* font-family: "Kanit", sans-serif; */
+}
+
+.h1,
+h1 {
+  font-weight: 500;
+  font-family: 'Varela Round', sans-serif;
+  /* font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Sans Thai", sans-serif; */
+}
+
+.h2,
+.h3,
+.h5,
+.h6,
+h2,
+h3,
+h5,
+h6 {
+  /* font-family: "Nunito Sans",sans-serif; */
+  font-size: 15px;
+  font-weight: 400;
+  /* font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Sans Thai", sans-serif; */
+}
+
+h4 {
+  color: black;
+  font-weight: 400;
+  font-size: 1.25rem;
+  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Sans Thai", sans-serif;
+}
+
+.wrapper {
+  background: #ffffff;
+  width: 450px;
+  padding: 20px;
+  border-radius: 50px;
+  margin: 20% auto;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pt-5 {
+  padding-top: 3rem !important;
+}
+
+.py-2 {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.bg-gray {
+  --ar-bg-opacity: 1;
+  background-color: var(--ar-gray-200) !important;
+}
+
+.min-vh-100 {
+  min-height: 100vh !important;
+}
+
+.position-relative {
+  position: relative !important;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+img {
+  width: 40rem;
+  height: auto;
+}
+
+/** ####  Style CLOCK #### **/
+.clock {
+  width: 100%;
+  /* background: rgb(255, 253, 189); */
+  font-size: 28px;
+  padding: 10px 50px 10px 50px;
+  font-family: Digital dream Fat;
+  color: black;
+  /* text-shadow: 1px 1px 2px teal, 0 0 25px green, 0 0 5px darkturquoise; */
+}
+
+
+.clock_outline {
+  background: #000000 linear-gradient(transparent 0%, transparent 50%, rgb(197, 184, 184) 50%, white 100%);
+  position: relative;
+  width: 6rem;
+  height: 6rem;
+  margin: 0 auto;
+  box-shadow: 0 5px 5px rgba(203, 195, 204, 0.65);
+  border-radius: 36rem;
+  background-size: 100% 200%;
+  /* animation: colorSlide 5s linear infinite, nudgeMouse 5s ease-out infinite;  */
+  animation: colorSlide 5s linear infinite;
+  padding: 2px;
+}
+
+/* วงใน */
+.outer-clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background: #545271;
+  overflow: hidden;
+}
+
+.outer-clock-face::after {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform: rotate(90deg)
+}
+
+/* เส้นเลข 3 6 9 13 */
+.outer-clock-face::before,
+.outer-clock-face::after,
+.outer-clock-face .marking {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  background: #b8b8c5;
+  z-index: 0;
+  left: 49%;
+}
+
+/* เส้นเลขเวลา */
+.outer-clock-face .marking {
+  background: #b8b8c5;
+  width: 1px;
+}
+
+.outer-clock-face .marking.marking-one {
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  transform: rotate(30deg)
+}
+
+.outer-clock-face .marking.marking-two {
+  -webkit-transform: rotate(60deg);
+  -moz-transform: rotate(60deg);
+  transform: rotate(60deg)
+}
+
+.outer-clock-face .marking.marking-three {
+  -webkit-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  transform: rotate(120deg)
+}
+
+.outer-clock-face .marking.marking-four {
+  -webkit-transform: rotate(150deg);
+  -moz-transform: rotate(150deg);
+  transform: rotate(150deg)
+}
+
+/* วงใน  */
+.inner-clock-face {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background: #ffffff;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  z-index: 1;
+}
+
+.inner-clock-face::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 18px;
+  margin-left: -3px;
+  margin-top: -2px;
+  background: #070708;
+  z-index: 11;
+}
+
+.hand {
+  width: 20%;
+  right: 49%;
+  height: 4px;
+  background: #2a3138;
+  position: absolute;
+  top: 50%;
+  border-radius: 3px;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.hand.hour-hand {
+  width: 25%;
+  z-index: 3;
+}
+
+.hand.min-hand {
+  height: 3px;
+  z-index: 10;
+  width: 35%;
+  background: #2a3138;
+}
+
+.hand.second-hand {
+  height: 3px;
+  background: #8989a7;
+  width: 40%;
+}
+
+
+/* Style CLOCK */
+
+/* SVG */
+.top-0 {
+  top: 0 !important;
+}
+
+.position-absolute {
+  position: absolute !important;
+}
+
+/* SVG */
+
+/* Style pallalax */
+
+
+.parallax {
+  position: relative;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.position-relative {
+  position: relative !important;
+}
+
+.zindex_1 {
+  z-index: -1;
+}
+
+.zindex_2 {
+  z-index: -2;
+}
+
+.zindex-2 {
+  z-index: 2;
+}
+
+.zindex-3 {
+  z-index: 3 !important;
+}
+
+.mb-n5 {
+  margin-bottom: -3rem !important;
+}
+
+.mx-auto {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+/* end Style pallalax */
+@keyframes colorSlide {
+  0% {
+    background-posceneition: 0% 100%;
+  }
+
+  20% {
+    background-posceneition: 0% 0%;
+  }
+
+  21% {
+    background-color: #2c333e;
+  }
+
+  29.99% {
+    background-color: white;
+    background-position: 0% 0%;
+  }
+
+  30% {
+    background-color: #2c333e;
+    background-position: 0% 100%;
+  }
+
+  50% {
+    background-position: 0% 0%;
+  }
+
+  51% {
+    background-color: #2c333e;
+  }
+
+  59% {
+    background-color: white;
+    background-position: 0% 0%;
+  }
+
+  60% {
+    background-color: #2c333e;
+    background-position: 0% 100%;
+  }
+
+  80% {
+    background-position: 0% 0%;
+  }
+
+  81% {
+    background-color: #2c333e;
+  }
+
+  90%,
+  100% {
+    background-color: white;
+  }
+}
+
+
+
+/**
+      #### font digital: http://www.cufonfonts.com #### 
+      #### css @font-face generator : https://transfonter.org/ #### 
+      **/
+@font-face {
+  font-family: "Digital dream Fat";
+  src: url("https://semicon.github.io/fonts/DigitaldreamFat.woff2") format("woff2"),
+    url("https://semicon.github.io/fonts/DigitaldreamFat.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&family=Varela+Round&display=swap');

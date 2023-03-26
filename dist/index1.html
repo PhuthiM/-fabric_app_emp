@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Employee</title>
+    <base target="_top">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- Font Css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+    <!-- <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=K2D'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400&family=Noto+Sans:wght@300&display=swap"
+        rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- ******Style CSS********* -->
+    <link rel="stylesheet" href="style.css">
+
+    <!--  ******* Time Tracker Script ***********  -->
+    <!--  ******* https://codewithcurt.com/create-employee-time-clock-web-app-on-google-sheets/ ***********  -->
+
+    <!-- Clock JS -->
+    <script type="text/javascript" async="" src="clock.js"></script>
+
+    <!-- Parallax JS -->
+    <script type="text/javascript" async="" src="parallax.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            getData();
+        });
+        function getData() {
+            google.script.run.withSuccessHandler(function (ar) {
+                var userSelect = document.getElementById("user");
+                console.log(ar);
+
+                let option = document.createElement("option");
+                option.value = "";
+                option.text = "";
+                userSelect.appendChild(option);
+
+                ar.forEach(function (item, index) {
+                    let option = document.createElement("option");
+                    var user = item[0] + " " + item[1];
+                    option.value = item[0] + " " + item[1];
+                    option.text = item[0] + " " + item[1];
+                    userSelect.appendChild(option);
+                });
+            }).getData();
+
+        };
+
+        function ClockIn() {
+
+            $('#message').html("");
+            var user = document.getElementById("user").value;
+
+            if (user != '') {
+
+                google.script.run.withSuccessHandler(function (ar) {
+                    console.log(ar);
+                    ar.forEach(function (item, index) {
+
+                        if (item[0] == 'SUCCESS') {
+                            var message = item[2] + '<br> วันที่เข้าทำงาน ' + item[1];
+                            $('#message').html(message);
+                            document.getElementById("message").className = "alert alert-primary";
+                            clearText();
+                        } else {
+                            var message = item[2] + ' ' + item[0];
+                            $('#message').html(message);
+                            document.getElementById("message").className = "alert alert-warning";
+                            clearText();
+                        }
+
+                    });
+                }).clockIn(user);
+            }
+        }
+
+        function ClockOut() {
+
+            $('#message').html("");
+            var user = document.getElementById("user").value;
+
+            if (user != '') {
+
+                google.script.run.withSuccessHandler(function (ar) {
+                    console.log(ar);
+                    ar.forEach(function (item, index) {
+
+                        if (item[0] == 'SUCCESS') {
+                            var message = item[2] + '<br> วันที่ลงเวลากลับ ' + item[1];
+                            $('#message').html(message);
+                            document.getElementById("message").className = "alert alert-primary";
+                            clearText();
+                        } else {
+                            var message = item[2] + ' ' + item[0];
+                            $('#message').html(message);
+                            document.getElementById("message").className = "alert alert-warning";
+                            clearText();
+                        }
+
+                    });
+
+                }).clockOut(user);
+
+            }
+        }
+
+    </script>
+    <style>
+        .alert {
+            padding: 20px;
+            background-color: #f41212;
+            color: #fffefc;;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+        }
+
+        .closebtn:hover {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <svg class="position-absolute top-0" width="600" height="160" viewBox="0 0 262 160" fill="none"
+        xmlns="http://www.w3.org/2000/svg" style="left: 3%;">
+        <ellipse cx="131" cy="30.5" rx="131" ry="129.5" fill="white" fill-opacity=".1"></ellipse>
+    </svg>
+
+    <svg class="position-absolute top-0" width="250" height="800" viewBox="0 0 262 120" fill="none"
+        xmlns="http://www.w3.org/2000/svg" style="left: 1450px;">
+        <ellipse cx="131" cy="30.5" rx="131" ry="129.5" fill="SteelBlue" fill-opacity=".1"></ellipse>
+    </svg>
+    <svg class="position-absolute top-0" width="320" height="880" viewBox="0 0 262 120" fill="none"
+        xmlns="http://www.w3.org/2000/svg" style="left: 4%;">
+        <ellipse cx="131" cy="30.5" rx="131" ry="129.5" fill="Turquoise" fill-opacity=".1"></ellipse>
+    </svg>
+    <div style="position:absolute;left: 690px;top: 100px;z-index: auto;">
+        <div class="wrapper text-center" style="min-width:350px;">
+            <div class="clock_outline">
+                <div class="outer-clock-face">
+                    <div class="marking marking-one"></div>
+                    <div class="marking marking-two"></div>
+                    <div class="marking marking-three"></div>
+                    <div class="marking marking-four"></div>
+                    <div class="inner-clock-face">
+                        <div class="hand hour-hand"></div>
+                        <div class="hand min-hand"></div>
+                        <div class="hand second-hand"></div>
+                    </div>
+                </div>
+            </div>
+            <h1>Attendance System</h1>
+            <span id="MyClockDisplay" class="clock" onload="showTime()"></span>
+            <form class="mt-4">
+                <div class="row">
+                    <div class="form-group col   align-content-center">
+                        <label for="user">กรอกรหัสพนักงาน</label>
+                        <input ali type="text" class="form-control text-center" id="user" placeholder="IDEmployee"
+                            style="width: 100%;">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <input type="button" value="ลงเวลาเข้า" id="clockin" class="btn btn-success"
+                            onclick="ClockIn()" />
+
+                        <input type="button" value="ลงเวลาออก" id="clockout" class="btn btn-warning"
+                            onclick="ClockOut()" /><br><br>
+                    </div>
+                    <div class="alert">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
+                        <strong>Danger!</strong> บันทึกเวลาไม่สำเร็จ
+                    </div>
+            </form>
+        </div>
+    </div>
+    <div style="position: absolute;left: -100px;top: 10px;z-index: -1;">
+        <div id="scene" data-relative-input="true"
+            style="max-width: 1606px; transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; pointer-events: none;">
+            <div class="parallax-layer overflow-hidden " data-depth="-0.1" style="transform: translate3d(-4.3px, 3.3px, 0px); 
+                transform-style: preserve-3d;
+                backface-visibility: hidden;
+                position: relative;
+                display: block;
+                left: 0px; top: 0px;">
+                <img src="image/01.png" alt="Background shapes">
+            </div>
+            <div class="parallax-layer" data-depth="-0.1"
+                style="transform: translate3d(6.3px, 0.8px, 0px);transform-style: preserve-3d; backface-visibility: hidden;position: relative;display: block; left: 0px; top: 0px;">
+                <img src="image/shape01.svg" alt="Background shapes">
+            </div>
+            <div class="parallax-layer zindex-2" data-depth="0.12"
+                style="transform: translate3d(-7.6px, -0.9px, 0px); transform-style: preserve-3d; backface-visibility: hidden;position: absolute; display: block; left: 0px; top: 0px;">
+                <img src="image/shape02.svg" alt="Foreground shape">
+            </div>
+            <div class="parallax-layer zindex-2" data-depth="0.35"
+                style="transform: translate3d(-22px, -2.7px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
+                <img src="image/shape03.svg" alt="Foreground shape">
+            </div>
+            <div class="parallax-layer zindex-2" data-depth="0.23"
+                style="transform: translate3d(-22px, -2.7px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
+                <img src="image/shape04.svg" alt="Foreground shape">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+</body>
+
+</html>
